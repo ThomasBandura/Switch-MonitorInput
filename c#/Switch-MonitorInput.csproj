@@ -9,8 +9,8 @@
 		<PublishSingleFile>true</PublishSingleFile>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<SelfContained>true</SelfContained>
-		<AssemblyVersion>1.0.33.0</AssemblyVersion>
-		<FileVersion>1.0.33.0</FileVersion>
+		<AssemblyVersion>1.0.34.0</AssemblyVersion>
+		<FileVersion>1.0.34.0</FileVersion>
 	</PropertyGroup>
 	<Target Name="CopyDocumentationToRoot" AfterTargets="Build">
 		<Copy SourceFiles="$(OutputPath)$(AssemblyName).xml" DestinationFolder="$(ProjectDir)" />
