@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>Switch_MonitorInput</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PublishSingleFile>true</PublishSingleFile>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<SelfContained>true</SelfContained>
+		<AssemblyVersion>1.0.33.0</AssemblyVersion>
+		<FileVersion>1.0.33.0</FileVersion>
+	</PropertyGroup>
+	<Target Name="CopyDocumentationToRoot" AfterTargets="Build">
+		<Copy SourceFiles="$(OutputPath)$(AssemblyName).xml" DestinationFolder="$(ProjectDir)" />
+	</Target>
+	<ItemGroup>
+		<None Include="LICENSE">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

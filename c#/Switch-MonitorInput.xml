@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Switch-MonitorInput</name>
+    </assembly>
+    <members>
+        <member name="T:Switch_MonitorInput.MonitorEnumProc">
+            <summary>
+            Delegate for the callback function that is called by the EnumDisplayMonitors function.
+            </summary>
+            <param name="hMonitor">A handle to the display monitor.</param>
+            <param name="hdcMonitor">A handle to a device context.</param>
+            <param name="lprcMonitor">A pointer to a RECT structure.</param>
+            <param name="dwData">Application-defined data that EnumDisplayMonitors passes to the callback function.</param>
+            <returns>Returns true to continue enumeration or false to stop.</returns>
+        </member>
+        <member name="T:Switch_MonitorInput.MonitorHelper">
+            <summary>
+            Provides helper methods for interacting with monitor input sources.
+            </summary>
+        </member>
+        <member name="M:Switch_MonitorInput.MonitorHelper.GetMonitorInfo(System.IntPtr,Switch_MonitorInput.MonitorInfo@)">
+            <summary>
+            Retrieves information about a display monitor.
+            </summary>
+            <param name="hMonitor">A handle to the display monitor.</param>
+            <param name="lpmi">A pointer to a MonitorInfo structure that receives information about the display monitor.</param>
+            <returns>True if the function succeeds; otherwise, false.</returns>
+        </member>
+        <member name="M:Switch_MonitorInput.MonitorHelper.GetMonitorHandle">
+            <summary>
+            Retrieves the handle of the first found monitor.
+            </summary>
+            <returns>The handle of the first found monitor.</returns>
+        </member>
+        <member name="M:Switch_MonitorInput.MonitorHelper.GetPhysicalMonitors(System.IntPtr)">
+            <summary>
+            Retrieves the physical monitors for a given monitor handle.
+            </summary>
+            <param name="hMonitor">The handle of the monitor.</param>
+            <returns>An array of physical monitors.</returns>
+        </member>
+        <member name="M:Switch_MonitorInput.MonitorHelper.SwitchInput(System.IntPtr,System.UInt32)">
+            <summary>
+            Switches the input source of a monitor.
+            </summary>
+            <param name="hMonitor">The handle of the monitor.</param>
+            <param name="inputSource">The input source code.</param>
+            <returns>True if the input source was successfully switched; otherwise, false.</returns>
+        </member>
+        <member name="M:Switch_MonitorInput.MonitorHelper.GetInputSourceCode(System.String)">
+            <summary>
+            Returns the code for a given input source.
+            </summary>
+            <param name="inputSource">The name of the input source.</param>
+            <returns>The code of the input source.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the input source is invalid.</exception>
+        </member>
+        <member name="T:Switch_MonitorInput.MonitorInfo">
+            <summary>
+            Represents information about a display monitor.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.MonitorInfo.cbSize">
+            <summary>
+            The size, in bytes, of the structure.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.MonitorInfo.rcMonitor">
+            <summary>
+            A RECT structure that specifies the display monitor rectangle.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.MonitorInfo.rcWork">
+            <summary>
+            A RECT structure that specifies the work area rectangle of the display monitor.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.MonitorInfo.dwFlags">
+            <summary>
+            The attributes of the display monitor.
+            </summary>
+        </member>
+        <member name="T:Switch_MonitorInput.PhysicalMonitor">
+            <summary>
+            Represents a physical monitor with a handle and a description.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.PhysicalMonitor.hPhysicalMonitor">
+            <summary>
+            Handle to the physical monitor.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.PhysicalMonitor.szPhysicalMonitorDescription">
+            <summary>
+            Description of the physical monitor.
+            </summary>
+        </member>
+        <member name="T:Switch_MonitorInput.Program">
+            <summary>
+            The main program class.
+            </summary>
+        </member>
+        <member name="M:Switch_MonitorInput.Program.Main(System.String[])">
+            <summary>
+            The main entry point of the application.
+            </summary>
+            <param name="args">The command-line arguments.</param>
+        </member>
+        <member name="M:Switch_MonitorInput.Program.Show_AttachedMonitors">
+            <summary>
+            Displays the attached monitors.
+            </summary>
+        </member>
+        <member name="T:Switch_MonitorInput.RECT">
+            <summary>
+            Represents a rectangle defined by the coordinates of its upper-left corner (left, top) 
+            and its lower-right corner (right, bottom).
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.RECT.left">
+            <summary>
+            The x-coordinate of the upper-left corner of the rectangle.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.RECT.top">
+            <summary>
+            The y-coordinate of the upper-left corner of the rectangle.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.RECT.right">
+            <summary>
+            The x-coordinate of the lower-right corner of the rectangle.
+            </summary>
+        </member>
+        <member name="F:Switch_MonitorInput.RECT.bottom">
+            <summary>
+            The y-coordinate of the lower-right corner of the rectangle.
+            </summary>
+        </member>
+    </members>
+</doc>
